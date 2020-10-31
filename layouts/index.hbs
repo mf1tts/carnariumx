@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+    <link rel="me" href="mailto:mfitts@meat-space.net" />
+</head>
+<body>
+    <h1>{{{ title }}}</h1>
+
+    <div class="recent">
+    {{#each stuff }}
+      <article class="h-entry">
+        <h2 class="p-name">{{ title }}</h2>
+        <a class="p-author h-card" href="http://meat-space.net">not marion fitts</a>
+        <time class="dt-published" datetime="{{ date }} 12:00:00">{{ date }}</time>
+        <div class="e-content">
+          {{{ contents }}}
+        </div>
+      </article>
+    {{/each}}
+    </div>
+</body>
+</html>
