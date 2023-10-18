@@ -4,6 +4,7 @@ var Metalsmith  = require('metalsmith'),
     layouts     = require('metalsmith-layouts'),
     drafts = require('metalsmith-drafts'),
     collections = require('metalsmith-collections'),
+    copy = require('metalsmith-copy'),
     blc = require('metalsmith-broken-link-checker');
 
 // Run Metalsmith in the current directory.
@@ -21,6 +22,10 @@ Metalsmith(__dirname)
         }
       })
     )
+    .use(copy({
+      pattern: '**.png',
+      directory: "images"
+    }))
     // Use metalsmith-markdown to convert
     // our source files' content from markdown
     // to HTML fragments.
